@@ -1,0 +1,208 @@
+body {
+  display: grid;
+  grid-template-rows: 100px 1fr 100px;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+.main {
+  margin: auto;
+  display: grid;
+  grid-auto-flow: row;
+}
+
+.contenedor-partido {
+  border: solid 5px black;
+  margin: 2rem auto;
+  width: 1000px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contenedor__partido-local {
+  display: flex;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+}
+
+.contenedor-adicional {
+  order: 2;
+  border-right: solid black 5px;
+  border-left: solid black 5px;
+  padding: 0 2rem;
+}
+
+.contenedor__partido-contrario {
+  display: flex;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  order: 3;
+}
+
+.logo__equipo {
+  width: 130px;
+  height: 120px;
+  margin: 1rem auto;
+}
+
+.tiempo-transurrido {
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.nombre-partido {
+  margin: auto;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  width: 120px;
+  text-decoration: none;
+  color: black;
+}
+
+.nombre-partido:hover {
+  color: red;
+}
+
+.goles {
+  margin-top: 3rem;
+  font-size: 50px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.container-plantilla {
+  display: grid;
+  width: 80%;
+  margin: 5rem auto;
+  grid-template-columns: repeat(auto-fill, 190px);
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-escudo {
+  width: 200px;
+  margin: auto;
+}
+
+.container-jugador {
+  border: solid black 5px;
+  border-radius: 8px;
+  /* margin: 2rem; */
+  width: 150px;
+  text-align: center;
+  height: 300px;
+}
+
+.imagenJugador {
+  width: 150px;
+  height: 150px;
+}
+
+.nombreJugador {
+  height: 40px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.posicion {
+  color: gray;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1062px) {
+  .contenedor-partido {
+    width: 800px;
+  }
+
+  .goles {
+    margin: 0;
+    font-size: 30px;
+  }
+
+  .contenedor-adicional {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .contenedor-partido {
+    width: 610px;
+  }
+
+  .goles {
+    margin: 2rem 0;
+    font-size: 20px;
+  }
+
+  .contenedor-adicional {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .titulo-pagina {
+    font-size: 30px;
+  }
+
+  .numero-partidos {
+    font-size: 20px;
+    color: black;
+  }
+
+  .contenedor-partido {
+    width: 300px;
+    flex-direction: column;
+  }
+
+  .goles {
+    padding: 0;
+    margin: 0%;
+    font-size: 40px;
+  }
+
+  .contenedor-adicional {
+    border: none;
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+    padding: 0%;
+    width: 100%;
+    height: 100px;
+  }
+
+  .contenedor__partido-local {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+  }
+
+  .contenedor__partido-contrario {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    order: 3;
+  }
+
+  .logo__equipo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .tiempo-transurrido {
+    font-size: 20px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    margin: 0.5rem;
+  }
+}

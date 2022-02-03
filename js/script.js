@@ -14,6 +14,7 @@ let sinpartidos = document.getElementById('sinpartidos');
 titulo_equipo.hidden = true;
 sinpartidos.hidden = true;
 
+//Saco todos los partidos en directo
 fetch("https://api-football-v1.p.rapidapi.com/v2/fixtures/live", {
     "method": "GET",
     "headers": {

@@ -35,7 +35,7 @@ const verPlantilla = (id) => {
                     imagenJugador.src = jugador.photo;
                     nombreJugador.textContent = jugador.name;
 
-                    //No he conseguido sacar los resultados en Español
+
                     if (jugador.position == "Goalkeeper") {
                         posicion.textContent = "Portero";
                     } else if (jugador.position == "Defender") {
@@ -73,8 +73,10 @@ const busquedaJugador = (jugador) => {
     })
         .then(datos => datos.json())
         .then(datos => {
-            
-            window.location.href = datos.results[0].link;
+            // window.location.href = datos.results[0].link;
+
+            //Se añade una pestaña nueva con el primer resultado encontrado del jugador
+            window.open(datos.results[0].link, "_blank");
         })
         .catch(err => {
             console.error(err);
@@ -90,7 +92,7 @@ container_info.addEventListener('click', (event) => {
         if (event.target.getAttribute('id')) {
             verPlantilla(event.target.getAttribute('id'));
         }
-        if(event.target.getAttribute('alt')){
+        if (event.target.getAttribute('alt')) {
             nombreequipo = event.target.getAttribute('alt');
         }
     }
@@ -98,24 +100,26 @@ container_info.addEventListener('click', (event) => {
 
 container_plantilla.addEventListener('click', (event) => {
 
-    if (event.target.tagName == "A") {
-        nombreaBuscar = event.target.childNodes[1].textContent;
-    }
-    if (event.target.tagName == "P") {
-        if (event.target.classList.contains('posicion')) {
-            nombreaBuscar = event.target.previousElementSibling.previousElementSibling.textContent;
-        } else {
-            nombreaBuscar = event.target.textContent
+    //Añado la condición para no se me cuele
+    if (event.target.tagName == "A" || event.target.tagName == "P" || event.target.tagName == "IMG") {
+        if (event.target.tagName == "A") {
+            nombreaBuscar = event.target.childNodes[1].textContent;
         }
-    }
-    if (event.target.tagName == "IMG") {
-        nombreaBuscar = event.target.nextElementSibling.textContent;
-    }
-    busquedaJugador(nombreaBuscar + ' ' +nombreequipo);
+        if (event.target.tagName == "P") {
+            if (event.target.classList.contains('posicion')) {
+                nombreaBuscar = event.target.previousElementSibling.previousElementSibling.textContent;
+            } else {
+                nombreaBuscar = event.target.textContent
+            }
+        }
+        if (event.target.tagName == "IMG") {
+            nombreaBuscar = event.target.nextElementSibling.textContent;
+        }
+        busquedaJugador(nombreaBuscar + ' ' + nombreequipo);
 
-    //Ejecuto un alert por que la api es lenta y a si se nota menos la espera
-    alert('Buscando a '+nombreaBuscar+'...');
-
+        //Ejecuto un alert por que la api es lenta y a si se nota menos la espera
+        alert('Buscando a ' + nombreaBuscar + '...');
+    }
 })
 
 //Si la API no muestra resultados de un equipo muestra un boton para volver a ver los partidos.

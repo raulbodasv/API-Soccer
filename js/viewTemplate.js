@@ -10,7 +10,7 @@ const verPlantilla = (id) => {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-            "x-rapidapi-key": "5dbfa1c1demsh53a65d71061e3aep1ddeadjsn99a21e46a07d"
+            "x-rapidapi-key": "API_KEY"
         }
     })
         .then(datos => datos.json())

@@ -68,7 +68,7 @@ const busquedaJugador = (jugador) => {
             "x-user-agent": "desktop",
             "x-proxy-location": "EU",
             "x-rapidapi-host": "google-search3.p.rapidapi.com",
-            "x-rapidapi-key": "5dbfa1c1demsh53a65d71061e3aep1ddeadjsn99a21e46a07d"
+            "x-rapidapi-key": "API_KEY"
         }
     })
         .then(datos => datos.json())

@@ -1,7 +1,6 @@
 //API usada https://rapidapi.com/api-sports/api/api-football/
 //API usada https://rapidapi.com/apigeek/api/google-search3/
-//KEY de rapidapi.com/ (vale para todas las apis de la pagina)
-const key = ('5dbfa1c1demsh53a65d71061e3aep1ddeadjsn99a21e46a07d');
+const key = ('API_KEY');
 
 let numero_partidos = document.getElementById('numero-partidos');
 let container_info = document.getElementById('container-info');
@@ -19,7 +18,7 @@ fetch("https://api-football-v1.p.rapidapi.com/v2/fixtures/live", {
     "method": "GET",
     "headers": {
         "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-        "x-rapidapi-key": "5dbfa1c1demsh53a65d71061e3aep1ddeadjsn99a21e46a07d"
+        "x-rapidapi-key": "API_KEY"
     }
 })
     .then(datos => datos.json())
